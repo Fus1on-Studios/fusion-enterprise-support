@@ -5,6 +5,11 @@ const { connectMongo } = require('./database/mongo');
 const { connectRedis } = require('./database/redis');
 const fs = require('fs');
 const path = require('path');
+const { pollNodes } = require("./jobs/nodeStatsPoller");
+
+setInterval(() => {
+  pollNodes(global.io); // If using websocket server
+}, 15000);
 
 const client = new Client({
   intents: [
