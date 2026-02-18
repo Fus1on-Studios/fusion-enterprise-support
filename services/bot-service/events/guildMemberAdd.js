@@ -1,5 +1,16 @@
 import { EmbedBuilder } from "discord.js";
 import GuildConfig from "../../../shared/models/GuildConfig.js";
+import { AttachmentBuilder } from "discord.js";
+import { generateWelcomeImage } from "../utils/welcomeImage.js";
+
+const imageBuffer = await generateWelcomeImage(member);
+const attachment = new AttachmentBuilder(imageBuffer, { name: "welcome.png" });
+
+await channel.send({
+  embeds: [embed],
+  files: [attachment]
+});
+
 
 export default {
   name: "guildMemberAdd",
