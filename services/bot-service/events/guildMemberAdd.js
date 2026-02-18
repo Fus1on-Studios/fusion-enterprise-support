@@ -36,5 +36,21 @@ export default {
       const role = member.guild.roles.cache.get(config.autoRoleId);
       if (role) await member.roles.add(role);
     }
+
+    try {
+      await member.send(`
+    👋 Welcome to ${member.guild.name}!
+
+    Here’s how to get started:
+
+    1️⃣ Read the rules  
+    2️⃣ Verify yourself  
+    3️⃣ Open a ticket if you need help  
+
+    Enjoy your stay!
+      `);
+    } catch (err) {
+      console.log("User DMs closed");
+    }
   }
 };
