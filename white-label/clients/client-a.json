@@ -1,0 +1,9 @@
+{
+  "name": "Client A Hosting",
+  "brandColor": "#FF6A00",
+  "secondaryColor": "#1E293B",
+  "logo": "/public/client-a-logo.png",
+  "domain": "support.clienta.com",
+  "discordGuildId": "123456789",
+  "defaultSLAHours": 24
+}
