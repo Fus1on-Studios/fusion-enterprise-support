@@ -23,5 +23,11 @@ export default {
       .setTimestamp();
 
     await channel.send({ embeds: [embed] });
+
+    if (config.autoRoleId) {
+      const role = member.guild.roles.cache.get(config.autoRoleId);
+      if (role) await member.roles.add(role);
+    }
+autoRoleId: String
   }
 };
