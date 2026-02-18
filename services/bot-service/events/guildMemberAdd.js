@@ -28,6 +28,5 @@ export default {
       const role = member.guild.roles.cache.get(config.autoRoleId);
       if (role) await member.roles.add(role);
     }
-autoRoleId: String
   }
 };
