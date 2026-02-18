@@ -2,6 +2,8 @@ import { EmbedBuilder } from "discord.js";
 import GuildConfig from "../../../shared/models/GuildConfig.js";
 import { AttachmentBuilder } from "discord.js";
 import { generateWelcomeImage } from "../utils/welcomeImage.js";
+import { trackJoin } from "../utils/antiRaid.js";
+trackJoin(member);
 
 export default {
   name: "guildMemberAdd",
